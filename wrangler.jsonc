@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "huggingface-models-assets-worker",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-08-17",
+  "workers_dev": false,
+  "r2_buckets": [
+    {
+      "binding": "ASSETS",
+      "bucket_name": "huggingface-models-assets"
+    }
+  ],
+  "vars": {
+    "MAX_UPLOAD_BYTES": "16777216"
+  },
+  "secrets": {
+    "required": [
+      "PUBLISH_TOKEN"
+    ]
+  },
+  "observability": {
+    "enabled": true
+  }
+}
